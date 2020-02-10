@@ -1,9 +1,19 @@
 import React from 'react';
 
-function List () {
+function List (props) {
     return (
         <ul>
-            item from form
+            {
+                props.items.map(
+                (i, index) => {
+                return(
+                <div>
+                    <li key={index}>{i}<button onClick={()=>i.strike()}>Finish</button></li>
+                </div>
+                )
+                }
+                )
+            }
         </ul>
     );
 };

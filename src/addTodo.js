@@ -1,9 +1,9 @@
 import React from 'react';
 
-function AddTodo () {
+function AddTodo (props) {
     return (
-        <form>
-            <input>
+        <form onSubmit={props.onSubmit}>
+            <input value={props.item} onChange={props.onChange}>
             </input>
             <button>
                 Add Todo Item
