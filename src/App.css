@@ -1,10 +1,15 @@
+* {
+  font-family: 'montserrat', sans-serif;
+}
+
 body {
-  background-color: rgb(176, 213, 245);
+  background-color: rgb(119, 185, 243);
 }
 
 .App {
-  background-color: aliceblue;
-  margin: 40px auto;
+  width: 400px;
+  background-color: rgb(12, 119, 212);
+  margin: auto;
   border: 2px solid black;
   border-radius: 12px;
 }

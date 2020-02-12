@@ -4,7 +4,10 @@ import './Title.css';
 function Title () {
     return (
         <header className='title'>
-            Simple Todo List App
+            Todo List App
+            <p id='description'>
+                with React
+            </p>
         </header>
     )
 };

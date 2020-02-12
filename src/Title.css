@@ -1,4 +1,10 @@
 .title {
     height: 40px;
     padding: 40px;
+    text-align: center;
+    font-size: 28px;
+}
+
+#description {
+    font-size: 12px;
 }

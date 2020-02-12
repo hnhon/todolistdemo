@@ -1,12 +1,13 @@
 import React from 'react';
+import './AddTodo.css';
 
 function AddTodo (props) {
     return (
-        <form onSubmit={props.onSubmit}>
-            <input value={props.item.text} onChange={props.onChange} required>
+        <form className='form' onSubmit={props.onSubmit}>
+            <input placeholder='Enter your todo item' value={props.item.text} onChange={props.onChange} required>
             </input>
             <button>
-                Add Todo Item
+                Add
             </button>
         </form>
     )
