@@ -15,7 +15,7 @@ function List (props) {
                                       : ""
                                     }}>{i.text}</p>
                                     <input type='checkbox' onClick={() => props.onClick(i.id)}></input>
-                                    <i>Delete</i>
+                                    <i onClick={() => props.onDelete(i.id)}>Delete</i>
                                 </ul>
                         )
                     }

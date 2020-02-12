@@ -55,12 +55,23 @@ class App extends Component {
     })
   }
 
+  handleDelete = (key) => {
+     let newList = this.state.items.filter(
+       (item) => {
+         return item.id !== key
+       }
+     );
+    this.setState ({
+      items: newList
+    })
+  }
+
   render () {
     return (
       <div className='App'>
         <Title />
         <AddTodo onChange={this.handleChange} onSubmit={this.handleSubmit} item={this.state.item} />
-        <List items={this.state.items} onClick={this.handleClick}/>
+        <List items={this.state.items} onClick={this.handleClick} onDelete={this.handleDelete} />
       </div>
     );
   }
