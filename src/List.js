@@ -1,42 +1,26 @@
-import React, {Component} from 'react';
+import React from 'react';
 
-class List extends Component {
-    constructor (props) {
-        super(props);
-        this.state = {
-            markCompleted: false
-        };
-    }
-
-    handleChange = () => {
-        let completed = this.state.markCompleted;
-        completed = completed ? false : true;
-        this.setState({markCompleted: completed})
-    }
-
-    getStyle = () => {
-        return {
-            textDecoration: this.state.markCompleted ? 'line-through' : 'none',
-        }
-    }
-
-    render () {
-        return (
-            <ul>
-                {
-                    this.props.items.map(
-                    (i, index) => {
-                    return(
-                    <div style={this.getStyle()}>
-                        <li key={index} markCompleted={this.state.markCompleted}>{i}<input type='checkbox' onChange={this.handleChange}></input></li>
-                    </div>
-                    )
+function List (props) {
+    return (
+        <div>
+            {
+                props.items.map(
+                    (i) => {
+                        return (
+                                <li key={i.id} style={{
+                                    textDecoration: i.done
+                                      ? "line-through"
+                                      : ""
+                                  }}>
+                                    {i.text}
+                                    <input type='checkbox' onClick={() => props.onClick(i.id)}></input>
+                                </li>
+                        )
                     }
-                    )
-                }
-            </ul>
-        );
-    }
+                )
+            }
+        </div>
+    );
 };
 
 export default List; 
