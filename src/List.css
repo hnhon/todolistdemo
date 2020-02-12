@@ -1,6 +1,8 @@
 
 
 .list {
+    display: grid;
+    grid-template-columns: 75% 1fr 1fr;
     height: auto;
     padding: 18px;
     margin: 6px 0;
@@ -8,11 +10,16 @@
 }
 
 .list p {
-    height: auto;
-    max-width: 90%;
+    margin: 10px;
     overflow-wrap: break-word;
 }
 
 .list input {
-    float: right;
+    margin: 10px;
+    cursor: pointer;
+}
+
+.list i {
+    margin: 10px;
+    cursor: pointer;
 }

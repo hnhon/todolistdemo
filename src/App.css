@@ -3,14 +3,12 @@
 }
 
 body {
-  background-color: rgb(119, 185, 243);
+  background: linear-gradient(#487eb0, #fbc531);
+  min-height: 100vh;
 }
 
 .App {
   width: 400px;
-  background-color: rgb(12, 119, 212);
   margin: auto;
-  border: 2px solid black;
-  border-radius: 12px;
 }
 

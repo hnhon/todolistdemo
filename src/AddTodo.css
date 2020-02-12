@@ -13,6 +13,11 @@
     font-size: 18px;
 }
 
+.form input::placeholder {
+    color: rgb(161, 157, 157);
+    font-size: 1rem;
+}
+
 .form button {
     outline: none;
     padding: auto;
@@ -24,6 +29,7 @@
     background: none;
     text-align: center;
     transition: background-color 1s ease-out;
+    cursor: pointer;
 }
 
 .form button:hover {

@@ -8,14 +8,14 @@ function List (props) {
                 props.items.map(
                     (i) => {
                         return (
-                                <ul className='list' key={i.id} style={{
+                                <ul className='list' key={i.id}>
+                                    <p style={{
                                     textDecoration: i.done
                                       ? "line-through"
                                       : ""
-                                  }}>
-                                    <p>{i.text}</p>
+                                    }}>{i.text}</p>
                                     <input type='checkbox' onClick={() => props.onClick(i.id)}></input>
-                                    <i></i>
+                                    <i>Delete</i>
                                 </ul>
                         )
                     }
