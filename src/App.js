@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
-import Title from './title';
-import AddTodo from './addTodo';
+import Title from './Title';
+import AddTodo from './AddTodo';
 import List from './List';
+import Filter from './Filter';
 import './App.css'
 
 class App extends Component {
@@ -13,7 +14,8 @@ class App extends Component {
         id: Date.now(),
         done: false
       },
-      items: []
+      items: [],
+      filter: 'All'
     };
   }
 
@@ -66,12 +68,19 @@ class App extends Component {
     })
   }
 
+  changeView = (newFilter) => {
+    this.setState ({
+      filter: newFilter
+    });
+  } 
+
   render () {
     return (
       <div className='App'>
         <Title />
         <AddTodo onChange={this.handleChange} onSubmit={this.handleSubmit} item={this.state.item} />
-        <List items={this.state.items} onClick={this.handleClick} onDelete={this.handleDelete} />
+        <List items={this.state.items} onClick={this.handleClick} onDelete={this.handleDelete} filter={this.state.filter} />
+        <Filter changeView={this.changeView} filter={this.state.filter} />
       </div>
     );
   }
