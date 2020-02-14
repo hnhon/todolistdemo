@@ -23,3 +23,12 @@
     margin: 10px;
     cursor: pointer;
 }
+
+#done {
+    text-decoration: line-through ;
+    color: rgb(47, 122, 47);
+}
+
+#active {
+    text-decoration: none;
+}
