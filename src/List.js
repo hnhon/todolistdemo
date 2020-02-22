@@ -8,7 +8,7 @@ function List (props) {
                         <p id={i.done === true? "done": "active"}>
                             {i.text}
                         </p>
-                        <input type='checkbox' onClick={() => props.onClick(i.id)}></input>
+                        <i type='checkbox' onClick={() => props.onClick(i.id)}>Y</i>
                         <i onClick={() => props.onDelete(i.id)}>Delete</i>
                     </ul>
             )
