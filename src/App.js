@@ -14,7 +14,7 @@ class App extends Component {
         id: Date.now(),
         done: false
       },
-      items: [],
+      items: localStorage.getItem('lists')==null?[]:JSON.parse(localStorage.getItem('lists')),
       filter: 'All'
     };
   }
@@ -39,6 +39,15 @@ class App extends Component {
         done: false
       }
     })
+    if (localStorage.getItem('lists')==null) {
+      let list = [];
+      list = [...list, this.state.item];
+      localStorage.setItem('lists', JSON.stringify(list))
+    } else {
+      let list = JSON.parse(localStorage.getItem('lists'));
+      list = [...list, this.state.item];
+      localStorage.setItem('lists', JSON.stringify(list)) 
+    }
   }
 
   handleClick = (id) => {
@@ -55,6 +64,7 @@ class App extends Component {
     this.setState ({
       items: newList
     })
+    localStorage.setItem('lists', JSON.stringify(newList));
   }
 
   handleDelete = (key) => {
@@ -65,7 +75,9 @@ class App extends Component {
      );
     this.setState ({
       items: newList
-    })
+    });
+
+    localStorage.setItem('lists', JSON.stringify(newList))
   }
 
   changeView = (newFilter) => {
