@@ -5,6 +5,7 @@ import List from './List';
 import Filter from './Filter';
 import './App.css'
 
+//define App component
 class App extends Component {
   constructor(props) {
     super(props);
@@ -19,6 +20,7 @@ class App extends Component {
     };
   }
 
+  //handle input from user
   handleChange = (e) => {
       let newItem = 
       {
@@ -29,7 +31,9 @@ class App extends Component {
       this.setState ({item: newItem});
   }
 
+  //handle submit from user
   handleSubmit = (e) => {
+    //prevent submit button takes page to other route
     e.preventDefault();
     this.setState ({
       items: [...this.state.items, this.state.item],
@@ -39,6 +43,7 @@ class App extends Component {
         done: false
       }
     })
+    //update localStorage 
     if (localStorage.getItem('lists')==null) {
       let list = [];
       list = [...list, this.state.item];
@@ -50,6 +55,7 @@ class App extends Component {
     }
   }
 
+  //hanlde completed button funtion
   handleClick = (id) => {
     let newList = this.state.items.map (i => {
       if (i.id === id) {
@@ -67,6 +73,7 @@ class App extends Component {
     localStorage.setItem('lists', JSON.stringify(newList));
   }
 
+  //hanlde Delete funtion
   handleDelete = (key) => {
      let newList = this.state.items.filter(
        (item) => {
@@ -80,6 +87,7 @@ class App extends Component {
     localStorage.setItem('lists', JSON.stringify(newList))
   }
 
+  //change view between all active and completed
   changeView = (newFilter) => {
     this.setState ({
       filter: newFilter

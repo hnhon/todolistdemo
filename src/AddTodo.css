@@ -1,4 +1,5 @@
 .form {
+ margin-top: 30px;
  display: grid;
  grid-template-columns: 75% 25%;
  grid-template-rows: 30px;
