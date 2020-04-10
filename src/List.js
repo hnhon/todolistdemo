@@ -1,15 +1,20 @@
 import React from 'react';
-import './List.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import {faCheck, faTrash} from '@fortawesome/free-solid-svg-icons'
 
 function List (props) {
     const list = (i)=> {
             return (
-                    <ul className='list' key={i.id}>
+                    <ul className='list grid' key={i.id}>
                         <p id={i.done === true? "done": "active"}>
                             {i.text}
-                        </p>
-                        <i type='checkbox' onClick={() => props.onClick(i.id)}>Y</i>
-                        <i onClick={() => props.onDelete(i.id)}>Delete</i>
+                        </p> 
+                        <i onClick={() => props.onClick(i.id)}>
+                        <FontAwesomeIcon icon={faCheck} />
+                        </i>
+                        <i onClick={() => props.onDelete(i.id)}>
+                        <FontAwesomeIcon icon={faTrash} />
+                        </i>
                     </ul>
             )
     }

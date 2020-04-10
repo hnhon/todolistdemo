@@ -3,7 +3,6 @@ import Title from './Title';
 import AddTodo from './AddTodo';
 import List from './List';
 import Filter from './Filter';
-import './App.css'
 
 //define App component
 class App extends Component {
@@ -99,8 +98,8 @@ class App extends Component {
       <div className='App'>
         <Title />
         <AddTodo onChange={this.handleChange} onSubmit={this.handleSubmit} item={this.state.item} />
-        <List items={this.state.items} onClick={this.handleClick} onDelete={this.handleDelete} filter={this.state.filter} />
         <Filter changeView={this.changeView} filter={this.state.filter} />
+        <List items={this.state.items} onClick={this.handleClick} onDelete={this.handleDelete} filter={this.state.filter} />
       </div>
     );
   }
