@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import Title from './Title';
-import AddTodo from './AddTodo';
-import List from './List';
-import Filter from './Filter';
+import Title from './title';
+import AddTodo from './addtodo';
+import List from './list';
+import Filter from './filter';
 
 //define App component
 class App extends Component {
