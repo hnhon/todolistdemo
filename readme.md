@@ -1,1 +1,1 @@
-A todo list app written in react. Use localstorage to store data on local broser. 
+A todo list app written in react. Use localstorage to store data on local browser. 
